@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="camdocuongphatModelStoreContainer" CdmEntityContainer="CamdoAnhTuEntities1">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="camdocuongphatModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Loan" ColumnName="Loan" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+          <ScalarProperty Name="DayPaids" ColumnName="DayPaids" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NgayNo" ColumnName="NgayNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DayBonus" ColumnName="DayBonus" />
+          <ScalarProperty Name="OldCode" ColumnName="OldCode" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CodeSort" ColumnName="CodeSort" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="songayno" ColumnName="songayno" />
+          <ScalarProperty Name="nodung" ColumnName="nodung" />
+          <ScalarProperty Name="tentaisan" ColumnName="tentaisan" />
+          <ScalarProperty Name="loaigiayto" ColumnName="loaigiayto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="histories">
+      <EntityTypeMapping TypeName="camdocuongphatModel.history">
+        <MappingFragment StoreEntitySet="history">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Ngaydongtien" ColumnName="Ngaydongtien" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loans">
+      <EntityTypeMapping TypeName="camdocuongphatModel.Loan">
+        <MappingFragment StoreEntitySet="Loan">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IDCus" ColumnName="IDCus" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="camdocuongphatModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="id_cuahang" ColumnName="id_cuahang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetCustomerEven" FunctionName="camdocuongphatModel.Store.GetCustomerEven">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="camdocuongphatModel.GetCustomerEven_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Loan" ColumnName="Loan" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+          <ScalarProperty Name="DayPaids" ColumnName="DayPaids" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NgayNo" ColumnName="NgayNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DayBonus" ColumnName="DayBonus" />
+          <ScalarProperty Name="OldCode" ColumnName="OldCode" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CodeSort" ColumnName="CodeSort" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="songayno" ColumnName="songayno" />
+          <ScalarProperty Name="nodung" ColumnName="nodung" />
+          <ScalarProperty Name="tentaisan" ColumnName="tentaisan" />
+          <ScalarProperty Name="loaigiayto" ColumnName="loaigiayto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCustomerOdd" FunctionName="camdocuongphatModel.Store.GetCustomerOdd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="camdocuongphatModel.GetCustomerOdd_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Loan" ColumnName="Loan" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="RemainingAmount" ColumnName="RemainingAmount" />
+          <ScalarProperty Name="DayPaids" ColumnName="DayPaids" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NgayNo" ColumnName="NgayNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DayBonus" ColumnName="DayBonus" />
+          <ScalarProperty Name="OldCode" ColumnName="OldCode" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CodeSort" ColumnName="CodeSort" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="songayno" ColumnName="songayno" />
+          <ScalarProperty Name="nodung" ColumnName="nodung" />
+          <ScalarProperty Name="tentaisan" ColumnName="tentaisan" />
+          <ScalarProperty Name="loaigiayto" ColumnName="loaigiayto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
