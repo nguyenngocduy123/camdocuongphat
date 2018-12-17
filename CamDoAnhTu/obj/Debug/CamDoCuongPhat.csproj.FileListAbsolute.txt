@@ -66,8 +66,8 @@ E:\CamDoCuongPhat\CamDoAnhTu\bin\Microsoft.Owin.Security.Google.xml
 E:\CamDoCuongPhat\CamDoAnhTu\bin\Microsoft.Owin.Security.Twitter.xml
 E:\CamDoCuongPhat\CamDoAnhTu\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\CamDoCuongPhat\CamDoAnhTu\bin\System.Web.WebPages.xml
-E:\CamDoCuongPhat\CamDoAnhTu\obj\Debug\CamDoCuongPhat.csprojAssemblyReference.cache
 E:\CamDoCuongPhat\CamDoAnhTu\obj\Debug\CamDoCuongPhat.csproj.CoreCompileInputs.cache
 E:\CamDoCuongPhat\CamDoAnhTu\obj\Debug\CamDoCuongPhat.csproj.CopyComplete
 E:\CamDoCuongPhat\CamDoAnhTu\obj\Debug\CamDoAnhTu.dll
 E:\CamDoCuongPhat\CamDoAnhTu\obj\Debug\CamDoAnhTu.pdb
+E:\CamDoCuongPhat\CamDoAnhTu\obj\Debug\CamDoCuongPhat.csprojAssemblyReference.cache

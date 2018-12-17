@@ -342,7 +342,7 @@ listItems = new List<SelectListItem>
         <div class="col-lg-6" style="text-align: right; padding-right: 30px; padding-top: 20px">
             @if (us.Permission == 1)
             {
-                <a href="@Url.Action("LoadAccount","Account")">Danh sách tài khoản</a><span>|</span>
+                <a href="@Url.Action("ChangePassWord","Account")">Đổi password</a><span>|</span>
             }
             <a id="logoutLink" href="#"><i class="glyphicon glyphicon-log-out"></i>Thoát</a>
         </div>
@@ -431,7 +431,7 @@ else
         <div class="col-lg-6" style="text-align: right; padding-right: 30px; padding-top: 20px">
             @if (us.Permission == 1)
             {
-                <a href="@Url.Action("LoadAccount","Account")">Danh sách tài khoản</a><span>|</span>
+                <a href="@Url.Action("ChangePassWord","Account")">Đổi password</a><span>|</span>
             }
             <a id="logoutLink" href="#"><i class="glyphicon glyphicon-log-out"></i>Thoát</a>
         </div>
