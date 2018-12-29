@@ -3193,6 +3193,11 @@ namespace CamDoAnhTu.Controllers
                 ctx.SaveChanges();
                 int day = Int32.Parse(model.Loan.ToString()) / Int32.Parse(model.Price.ToString());
 
+                if(day > 1000)
+                {
+                    throw new Exception("loi");
+                }
+
                 for (int i = 1; i <= day; i++)
                 {
                     Loan temp = new Loan();
