@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="camdocuongphatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="camdocuongphatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="Code" />
@@ -31,6 +31,7 @@
           <Property Name="nodung" Type="bit" />
           <Property Name="tentaisan" Type="nvarchar(max)" />
           <Property Name="loaigiayto" Type="int" />
+          <Property Name="IsEven" Type="bit" />
         </EntityType>
         <EntityType Name="history">
           <Key>
@@ -69,8 +70,7 @@
           <EntitySet Name="Loan" EntityType="Self.Loan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="camdocuongphatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -102,6 +102,7 @@
           <Property Name="loaigiayto" Type="Int32" />
           <NavigationProperty Name="histories" Relationship="camdocuongphatModel.Customerhistory" FromRole="Customer" ToRole="history" />
           <NavigationProperty Name="Loans" Relationship="camdocuongphatModel.CustomerLoan" FromRole="Customer" ToRole="Loan" />
+          <Property Name="IsEven" Type="Boolean" />
         </EntityType>
         <EntityType Name="history">
           <Key>
@@ -231,6 +232,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="camdocuongphatModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="IsEven" ColumnName="IsEven" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Address" ColumnName="Address" />

@@ -28,6 +28,7 @@
     <Property Name="loaigiayto" Type="Int32" />
     <NavigationProperty Name="histories" Relationship="camdocuongphatModel.Customerhistory" FromRole="Customer" ToRole="history" />
     <NavigationProperty Name="Loans" Relationship="camdocuongphatModel.CustomerLoan" FromRole="Customer" ToRole="Loan" />
+    <Property Name="IsEven" Type="Boolean" />
   </EntityType>
   <EntityType Name="history">
     <Key>

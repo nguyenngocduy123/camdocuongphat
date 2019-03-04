@@ -4418,7 +4418,7 @@ namespace CamDoAnhTu.Controllers
         public ActionResult UpdateAI(Customer model, HttpPostedFileBase fuMain)
         {
             int i = 1;
-
+            
             if (model.DayBonus == null)
             {
                 model.DayBonus = 0;

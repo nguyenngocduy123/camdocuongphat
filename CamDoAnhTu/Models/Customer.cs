@@ -43,6 +43,7 @@ namespace CamDoAnhTu.Models
         public Nullable<bool> nodung { get; set; }
         public string tentaisan { get; set; }
         public Nullable<int> loaigiayto { get; set; }
+        public Nullable<bool> IsEven { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<history> histories { get; set; }

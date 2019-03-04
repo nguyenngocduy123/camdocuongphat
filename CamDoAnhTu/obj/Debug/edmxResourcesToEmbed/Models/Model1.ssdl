@@ -26,6 +26,7 @@
     <Property Name="nodung" Type="bit" />
     <Property Name="tentaisan" Type="nvarchar(max)" />
     <Property Name="loaigiayto" Type="int" />
+    <Property Name="IsEven" Type="bit" />
   </EntityType>
   <EntityType Name="history">
     <Key>
