@@ -3,10 +3,8 @@
 
 
 @{
-                /**/
-
-                ViewBag.Title = "AddCustomer";
-                Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "AddCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section css{
@@ -161,7 +159,7 @@
     <script>
 
         $(function () {
-            $("#StartDate").datepicker({ dateFormat: "dd/mm/yy" }).val();
+            $("#txtStartDate").datepicker({ dateFormat: "dd/mm/yy" }).val();
         });
 
     </script>
@@ -186,52 +184,50 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">Mã số:</label>
         <div class="col-sm-2">
-
-            @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+            <input type="text" class="form-control" id="Code" name="Code" />
             <span id="userError"></span>
         </div>
         <label class="col-sm-2 control-label">Tên khách hàng:</label>
         <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            <input type="text" class="form-control" id="txtName" name="Name" />
         </div>
-        <label class="col-sm-2 control-label">Điện thoại:</label>
+        <label class="col-sm-2 control-label">Mã số cũ (nếu có):</label>
         <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            <input type="text" class="form-control" id="OldCode" name="OldCode" />
         </div>
     </div>
     <div class="form-group">
-
+        <label class="col-sm-2 control-label">Điện thoại:</label>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="txtPhone" name="Phone" />
+        </div>
         <label class="col-sm-2 control-label">Ngày bắt đầu:</label>
         <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.StartDate, DateTime.Now.ToString("dd/MM/yyyy"), new { @class = "form-control", @value = DateTime.Now.ToString("dd/MM/yyyy") })
+            <input type="text" class="form-control" id="txtStartDate" name="StartDate" value="@string.Format("{0:dd/MM/yyyy}",DateTime.Now)" />
         </div>
         <label class="col-sm-2 control-label">Địa chỉ:</label>
         <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+            <input type="text" class="form-control" id="txtAddress" name="Address" />
         </div>
-        <label class="col-sm-2 control-label">Số tiền vay:</label>
-        <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.Loan, new { @class = "form-control auto" })
-        </div>
+
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label">Số ngày phải trả:</label>
+        <label class="col-sm-2 control-label">Tổng nợ:</label>
         <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.songayno, new { @class = "form-control" })
+            <input type="text" class="form-control auto" id="txtLoan" name="Loan" />
         </div>
-        <label class="col-sm-2 control-label">Tên tài sản:</label>
+        <label class="col-sm-2 control-label">Số tiền trả trong 1 ngày:</label>
         <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.tentaisan, new { @class = "form-control" })
+            <input type="text" class="form-control auto" id="txtPrice" name="Price" />
         </div>
-        <label class="col-sm-2 control-label">Số tiền đứng:</label>
+        <label class="col-sm-2 control-label">Số ngày được phép nợ thêm:</label>
         <div class="col-sm-2">
-            @Html.TextBoxFor(m => m.Price, new { @class = "form-control auto" })
+            <input type="text" class="form-control" id="DayBonus" name="DayBonus" />
         </div>
     </div>
-
     <div>
         <label class="col-sm-2 control-label">Ghi chú:</label>
-        @Html.TextAreaFor(m => m.Note, 10, 55, null)
+        @Html.TextAreaFor(e => e.Note, 10, 55, null)
     </div>
     <div class="form-group">
         <div class="col-sm-10 col-sm-offset-2">

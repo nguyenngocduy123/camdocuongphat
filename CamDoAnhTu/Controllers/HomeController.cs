@@ -956,9 +956,10 @@ namespace CamDoAnhTu.Controllers
 
                 foreach (Customer model in list2)
                 {
+                    int code = Int32.Parse(model.Code.Substring(1, model.Code.Length - 1));
+
                     if ((model.Code[0] >= 'A' && model.Code[0] <= 'Z') || (model.Code[0] >= 'a' && model.Code[0] <= 'z') && model.CodeSort == null)
                     {
-                        int code = Int32.Parse(model.Code.Substring(2, model.Code.Length - 2));
 
                         if (model.Code[0] == 'A')
                         {
@@ -971,7 +972,7 @@ namespace CamDoAnhTu.Controllers
                     }
                     else
                     {
-                        model.CodeSort = Int32.Parse(model.Code);
+                        model.CodeSort = code;
                     }
                 }
 
@@ -1516,9 +1517,10 @@ namespace CamDoAnhTu.Controllers
 
                 foreach (Customer model in list2)
                 {
+                    int code = Int32.Parse(model.Code.Substring(1, model.Code.Length - 1));
+
                     if ((model.Code[0] >= 'A' && model.Code[0] <= 'Z') || (model.Code[0] >= 'a' && model.Code[0] <= 'z') && model.CodeSort == null)
                     {
-                        int code = Int32.Parse(model.Code.Substring(2, model.Code.Length - 2));
 
                         if (model.Code[0] == 'A')
                         {
@@ -1531,7 +1533,7 @@ namespace CamDoAnhTu.Controllers
                     }
                     else
                     {
-                        model.CodeSort = Int32.Parse(model.Code);
+                        model.CodeSort = code;
                     }
                 }
 
@@ -1544,7 +1546,7 @@ namespace CamDoAnhTu.Controllers
 
                 var summoney = (from l in ctx.Loans
                                 join cs in ctx.Customers on l.IDCus equals cs.Code
-                                where cs.type == 13 && l.Date.Year == todayYear && l.Date.Month == todayMonth && l.Date.Day == todayDay
+                                where cs.type == 12 && l.Date.Year == todayYear && l.Date.Month == todayMonth && l.Date.Day == todayDay
                                 select new
                                 {
                                     cs.Price
@@ -2441,10 +2443,6 @@ namespace CamDoAnhTu.Controllers
                 if (!string.IsNullOrEmpty(Phone))
                 {
                     lsttrave = list.Where(p => p.Phone.Contains(Phone)).ToList();
-                }
-                if (!string.IsNullOrEmpty(Address))
-                {
-                    lsttrave = list.Where(p => p.Address.Contains(Address)).ToList();
                 }
                 if (Noxau == 1)
                 {
@@ -3524,7 +3522,6 @@ namespace CamDoAnhTu.Controllers
         {
             using (CamdoAnhTuEntities1 ctx = new CamdoAnhTuEntities1())
             {
-                List<Loan> lstLoan = new List<Loan>();
                 ctx.Configuration.ValidateOnSaveEnabled = false;
                 if (model.DayBonus == null)
                 {
@@ -3535,30 +3532,26 @@ namespace CamDoAnhTu.Controllers
                 model.RemainingAmount = 0;
                 model.type = 8;
 
+                if ((model.Code[0] >= 'A' && model.Code[0] <= 'Z') || (model.Code[0] >= 'a' && model.Code[0] <= 'z') && model.CodeSort == null)
+                {
+                    int code = Int32.Parse(model.Code.Substring(1, model.Code.Length - 1));
+
+                    if (model.Code[0] == 'A')
+                    {
+                        model.CodeSort = code + 1000;
+                    }
+                    else
+                    {
+                        model.CodeSort = (((model.Code[0] - 'A') + 1) * 1000) + code;
+                    }
+                }
+                else
+                {
+                    model.CodeSort = Int32.Parse(model.Code);
+                }
 
                 ctx.Customers.Add(model);
-
-                int day = model.songayno == 0 ? 0 : (int)model.songayno;
-                DateTime k = model.StartDate;
-
-                for (int i = 1; i <= 60; i++)
-                {
-                    Loan temp = new Loan();
-                    temp.Date = k.AddDays(day);
-                    temp.IDCus = model.Code;
-                    temp.Status = 0;
-                    ctx.Loans.Add(temp);
-
-                    k = temp.Date;
-                    lstLoan.Add(temp);
-
-                    ctx.SaveChanges();
-                }
-                ViewData["Loans"] = lstLoan;
-
-
                 ctx.SaveChanges();
-
             }
 
             if (fuMain != null && fuMain.ContentLength > 0)
@@ -3570,7 +3563,7 @@ namespace CamDoAnhTu.Controllers
                 string mainFileName = Path.Combine(targetDirPath, "main.jpg");
                 fuMain.SaveAs(mainFileName);
             }
-            return RedirectToAction("LoadCustomerAX", "Home");
+            return RedirectToAction("LoadCustomerXE2", "Home");
         }
 
         public ActionResult AddCustomerAD()
@@ -3728,7 +3721,6 @@ namespace CamDoAnhTu.Controllers
         {
             using (CamdoAnhTuEntities1 ctx = new CamdoAnhTuEntities1())
             {
-                List<Loan> lstLoan = new List<Loan>();
                 ctx.Configuration.ValidateOnSaveEnabled = false;
                 if (model.DayBonus == null)
                 {
@@ -3739,30 +3731,26 @@ namespace CamDoAnhTu.Controllers
                 model.RemainingAmount = 0;
                 model.type = 12;
 
+                if ((model.Code[0] >= 'A' && model.Code[0] <= 'Z') || (model.Code[0] >= 'a' && model.Code[0] <= 'z') && model.CodeSort == null)
+                {
+                    int code = Int32.Parse(model.Code.Substring(1, model.Code.Length - 1));
+
+                    if (model.Code[0] == 'A')
+                    {
+                        model.CodeSort = code + 1000;
+                    }
+                    else
+                    {
+                        model.CodeSort = (((model.Code[0] - 'A') + 1) * 1000) + code;
+                    }
+                }
+                else
+                {
+                    model.CodeSort = Int32.Parse(model.Code);
+                }
 
                 ctx.Customers.Add(model);
-
-                int day = model.songayno == 0 ? 0 : (int)model.songayno;
-                DateTime k = model.StartDate;
-
-                for (int i = 1; i <= 60; i++)
-                {
-                    Loan temp = new Loan();
-                    temp.Date = k.AddDays(day);
-                    temp.IDCus = model.Code;
-                    temp.Status = 0;
-                    ctx.Loans.Add(temp);
-
-                    k = temp.Date;
-                    lstLoan.Add(temp);
-
-                    ctx.SaveChanges();
-                }
-                ViewData["Loans"] = lstLoan;
-
-
                 ctx.SaveChanges();
-
             }
 
             if (fuMain != null && fuMain.ContentLength > 0)
@@ -4665,17 +4653,6 @@ namespace CamDoAnhTu.Controllers
                 {
                     pro = ctx.Customers.Where(p => p.Code == pro.Code).FirstOrDefault();
 
-                    int day = Int32.Parse(pro.Loan.ToString()) / Int32.Parse(pro.Price.ToString());
-
-                    for (int s = 1; s <= day; s++)
-                    {
-                        Loan temp = new Loan();
-                        temp.Date = pro.StartDate.AddDays(s);
-                        temp.IDCus = pro.Code;
-                        temp.Status = 0;
-                        ctx.Loans.Add(temp);
-                        ctx.SaveChanges();
-                    }
                     ctx.SaveChanges();
                 }
             }
@@ -4690,7 +4667,7 @@ namespace CamDoAnhTu.Controllers
                 fuMain.SaveAs(mainFileName);
             }
 
-            return RedirectToAction("LoadCustomerAX", "Home");
+            return RedirectToAction("LoadCustomerXE2", "Home");
         }
 
         public ActionResult UpdateAD(string id)
@@ -5335,11 +5312,15 @@ namespace CamDoAnhTu.Controllers
 
         #region Tim kiem chan le
 
-        public ActionResult TimKiemNoKhachHang()
+        public ActionResult TimKiemNoKhachHang(int type)
         {
+            ViewBag.type = type;
+            return View();
+
             using (CamdoAnhTuEntities1 ctx = new CamdoAnhTuEntities1())
             {
                 int result;
+
                 List<Customer> lst = ctx.Customers.Where(p => p.type == 1).ToList();
                 List<Customer> lst1 = new List<Customer>();
                 foreach (var cus in lst)
@@ -5362,8 +5343,11 @@ namespace CamDoAnhTu.Controllers
             }
         }
 
-        public ActionResult TimKiemNoKhachHang1()
+        public ActionResult TimKiemNoKhachHang1(int type)
         {
+            ViewBag.type = type;
+            return View();
+
             using (CamdoAnhTuEntities1 ctx = new CamdoAnhTuEntities1())
             {
                 int result;
