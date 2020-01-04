@@ -97,3 +97,4 @@ E:\CamDoCuongPhat\CamDoAnhTu\bin\ExcelNumberFormat.xml
 E:\CamDoCuongPhat\CamDoAnhTu\bin\LinqKit.xml
 E:\CamDoCuongPhat\CamDoAnhTu\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\CamDoCuongPhat\CamDoAnhTu\bin\Newtonsoft.Json.pdb
+E:\CamDoCuongPhat\CamDoAnhTu\obj\Debug\CamDoCuongPhat.csprojAssemblyReference.cache

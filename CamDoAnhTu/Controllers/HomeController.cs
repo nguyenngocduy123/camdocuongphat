@@ -3169,6 +3169,13 @@ namespace CamDoAnhTu.Controllers
                 model.RemainingAmount = 0;
                 model.type = 1;
 
+                model.IsEven = false;
+
+                if (Int32.Parse(model.Code[model.Code.Length - 1].ToString()) % 2 == 0)
+                {
+                    model.IsEven = true;
+                }
+
                 if ((model.Code[0] >= 'A' && model.Code[0] <= 'Z') || (model.Code[0] >= 'a' && model.Code[0] <= 'z') && model.CodeSort == null)
                 {
                     int code = Int32.Parse(model.Code.Substring(1, model.Code.Length - 1));
@@ -3287,6 +3294,12 @@ namespace CamDoAnhTu.Controllers
                 model.AmountPaid = 0;
                 model.RemainingAmount = 0;
                 model.type = 5;
+                model.IsEven = false;
+
+                if (Int32.Parse(model.Code[model.Code.Length - 1].ToString()) % 2 == 0)
+                {
+                    model.IsEven = true;
+                }
 
                 ctx.Customers.Add(model);
                 ctx.SaveChanges();
@@ -3532,6 +3545,13 @@ namespace CamDoAnhTu.Controllers
                 model.RemainingAmount = 0;
                 model.type = 8;
 
+                model.IsEven = false;
+
+                if (Int32.Parse(model.Code[model.Code.Length - 1].ToString()) % 2 == 0)
+                {
+                    model.IsEven = true;
+                }
+
                 if ((model.Code[0] >= 'A' && model.Code[0] <= 'Z') || (model.Code[0] >= 'a' && model.Code[0] <= 'z') && model.CodeSort == null)
                 {
                     int code = Int32.Parse(model.Code.Substring(1, model.Code.Length - 1));
@@ -3563,7 +3583,7 @@ namespace CamDoAnhTu.Controllers
                 string mainFileName = Path.Combine(targetDirPath, "main.jpg");
                 fuMain.SaveAs(mainFileName);
             }
-            return RedirectToAction("LoadCustomerXE2", "Home");
+            return RedirectToAction("LoadCustomerAX", "Home");
         }
 
         public ActionResult AddCustomerAD()
@@ -3731,6 +3751,13 @@ namespace CamDoAnhTu.Controllers
                 model.RemainingAmount = 0;
                 model.type = 12;
 
+                model.IsEven = false;
+
+                if (Int32.Parse(model.Code[model.Code.Length - 1].ToString()) % 2 == 0)
+                {
+                    model.IsEven = true;
+                }
+
                 if ((model.Code[0] >= 'A' && model.Code[0] <= 'Z') || (model.Code[0] >= 'a' && model.Code[0] <= 'z') && model.CodeSort == null)
                 {
                     int code = Int32.Parse(model.Code.Substring(1, model.Code.Length - 1));
@@ -3784,6 +3811,13 @@ namespace CamDoAnhTu.Controllers
                 model.AmountPaid = 0;
                 model.RemainingAmount = 0;
                 model.type = 13;
+
+                model.IsEven = false;
+
+                if (Int32.Parse(model.Code[model.Code.Length - 1].ToString()) % 2 == 0)
+                {
+                    model.IsEven = true;
+                }
 
                 ctx.Customers.Add(model);
                 ctx.SaveChanges();
@@ -4667,7 +4701,7 @@ namespace CamDoAnhTu.Controllers
                 fuMain.SaveAs(mainFileName);
             }
 
-            return RedirectToAction("LoadCustomerXE2", "Home");
+            return RedirectToAction("LoadCustomerAX", "Home");
         }
 
         public ActionResult UpdateAD(string id)
